@@ -107,7 +107,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 
 	/**
-	 * Handles jakarta.validation.ConstraintViolationException. Thrown when @Validated
+	 * Handles javax.validation.ConstraintViolationException. Thrown when @Validated
 	 * fails.
 	 *
 	 * @param ex the ConstraintViolationException
@@ -123,7 +123,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
 	/**
 	 * Handles EntityNotFoundException. Created to encapsulate errors with more
-	 * detail than jakarta.persistence.EntityNotFoundException.
+	 * detail than javax.persistence.EntityNotFoundException.
 	 *
 	 * @param ex the EntityNotFoundException
 	 * @return the ApiError object
@@ -178,6 +178,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 	}
 
 	private ResponseEntity<Object> buildResponseEntity(ApiError apiError) {
-        return new ResponseEntity<>(apiError, apiError.getStatus());
-    }
+		return new ResponseEntity<>(apiError, apiError.getStatus());
+	}
+
 }
